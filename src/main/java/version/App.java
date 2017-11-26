@@ -21,7 +21,7 @@ public class App
             i.printStackTrace();
         }
     }
-    static void deserialize(Object p, String filename){
+    static void deserialize(Employee p, String filename){
         try {
             FileInputStream fileIn = new FileInputStream(filename);
             ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -30,7 +30,7 @@ public class App
             fileIn.close();
             System.out.println(p);
         } catch (InvalidClassException e){
-            System.out.println(p);
+            e.printStackTrace();
         } catch (IOException i) {
             i.printStackTrace();
         } catch (ClassNotFoundException c) {
@@ -41,8 +41,8 @@ public class App
     public static void main( String[] args )
     {
         Employee e =new Employee();
-        serialize(e,"employeev3.ser");
-//        deserialize(e,"employeev1.ser");
+//      serialize(e,"employeev3.ser");
+       deserialize(e,"employeev1.ser");
 //        deserialize(e,"employeev2.ser");
 //        deserialize(e,"employeev3.ser");
     }
