@@ -40,9 +40,10 @@ public class App
     }
     public static void main( String[] args )
     {
-        Employee e =new Employee();
-//      serialize(e,"employeev3.ser");
-       deserialize(e,"employeev1.ser");
+        Employee e = Employee.builder().firstname("Ioan").email("iulian.lascu").build();
+      serialize(e,"employeev2.ser");
+       deserialize(e,"employeev2.ser");
+        System.out.println(e.getFirstname()+e.getEmail());
 //        deserialize(e,"employeev2.ser");
 //        deserialize(e,"employeev3.ser");
     }
